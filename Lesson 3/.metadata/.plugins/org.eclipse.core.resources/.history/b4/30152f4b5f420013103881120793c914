@@ -1,0 +1,15 @@
+package views;
+
+import javax.swing.JApplet;
+
+public class Index extends JApplet {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package views;
+
+import java.awt.LayoutManager;
+
+import javax.swing.JPanel;
+
+public class MainForm extends JPanel {
+
+	public MainForm() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public MainForm(LayoutManager layout) {
+		super(layout);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MainForm(boolean isDoubleBuffered) {
+		super(isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MainForm(LayoutManager layout, boolean isDoubleBuffered) {
+		super(layout, isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+
+}

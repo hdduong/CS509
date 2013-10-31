@@ -1,0 +1,27 @@
+package views;
+
+import javax.swing.JApplet;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+
+public class Main extends JApplet {
+	
+	//Model model=new Model();
+	
+	public Main() {
+	//	MainForm panel=new MainForm(model);
+		
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 450, Short.MAX_VALUE)
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 300, Short.MAX_VALUE)
+		);
+		getContentPane().setLayout(groupLayout);
+	}
+ 
+
+}

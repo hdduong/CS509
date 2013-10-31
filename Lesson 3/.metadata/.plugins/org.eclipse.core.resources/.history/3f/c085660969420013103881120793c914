@@ -1,0 +1,41 @@
+package model;
+
+import java.util.ArrayList;
+
+public class DataSet {
+	
+	ArrayList<DataPoint> dataset;
+	
+	DataSet(){
+		dataset = new ArrayList<DataPoint>();
+	}
+	
+	public boolean loadDataSetFromFile(String filePath){
+		
+	}
+	
+	public boolean saveDataSetToFile(String filePath){
+		
+	}
+
+	public boolean addDataPoint(DataPoint d){ 
+		return dataset.add(d);
+	}
+	
+	public boolean deleteDataPoint(DataPoint d){ 
+		return dataset.remove(d);		 
+	}
+	public boolean deleteDataPoint(int index){ 
+		return dataset.remove(index)==null;		 
+	}
+	
+	public boolean  editDataPoint(int index, int x, int y){
+		boolean success=false;
+		if(dataset.size()>index)
+			success=true;
+		DataPoint d=dataset.get(index);		
+		d.x=x;
+		d.y=y;
+		return success;
+	}
+}
