@@ -1,0 +1,146 @@
+package dataVisualizer.views;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.TableCellEditor;
+import javax.swing.ImageIcon;
+import javax.swing.JToolBar;
+ 
+
+import javax.swing.JMenuBar;
+import javax.swing.UIManager;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTable;
+import javax.swing.JList;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JCheckBox;
+ 
+
+public class Main extends JFrame {
+
+	private JPanel contentPane;
+	private JTable table;
+
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Main frame = new Main();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Main() {
+		setTitle("DataVisualizer");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 830, 547);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JButton btnUploadData = new JButton("Upload Data");
+		btnUploadData.setBounds(11, 11, 121, 29);
+		
+		JButton btnSaveDataTo = new JButton("Save data to file");
+		btnSaveDataTo.setBounds(138, 11, 144, 29);
+		contentPane.setLayout(null);
+		
+		DataListTableModel model = new DataListTableModel();
+		table = new JTable(model);
+		table.setCellSelectionEnabled(true); 
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(20, 86, 154, 155);
+		scrollPane.setViewportView(table);
+		contentPane.add(scrollPane);
+		
+		
+		//DataListTable model = new DataListTable(); 
+		
+		contentPane.add(btnUploadData);
+		contentPane.add(btnSaveDataTo);
+		
+		JFormattedTextField frmtdtxtfldX = new JFormattedTextField();
+		frmtdtxtfldX.setBounds(41, 49, 36, 18);
+		contentPane.add(frmtdtxtfldX);
+		
+		JLabel lblNewLabel = new JLabel("x=");
+		lblNewLabel.setBounds(21, 49, 23, 16);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblY = new JLabel("y=");
+		lblY.setBounds(89, 49, 23, 16);
+		contentPane.add(lblY);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField();
+		formattedTextField.setBounds(111, 49, 36, 18);
+		contentPane.add(formattedTextField);
+		
+		JButton btnAdd = new JButton("Add");
+		btnAdd.setBounds(165, 45, 66, 29);
+		contentPane.add(btnAdd);
+		
+		BufferedImage dataGraph = null;  
+		try {
+		//	System.out.println(System.getProperty("user.dir"));
+			dataGraph = ImageIO.read(this.getClass().getResourceAsStream("cartesianExample.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		JLabel lblGraph = new JLabel(new ImageIcon(dataGraph));
+		lblGraph.setBounds(289, 63, 392, 381);
+		contentPane.add(lblGraph);
+		
+		JButton btnSwithToColumn = new JButton("Swith to Column graph");
+		btnSwithToColumn.setBounds(294, 11, 197, 29);
+		contentPane.add(btnSwithToColumn);
+		
+		JButton btnShowXyAxis = new JButton("Show x,y axis");
+		btnShowXyAxis.setBounds(289, 456, 117, 29);
+		contentPane.add(btnShowXyAxis);
+		
+		JButton btnShowTrendLine = new JButton("Show trend line");
+		btnShowTrendLine.setBounds(495, 11, 135, 29);
+		contentPane.add(btnShowTrendLine);
+		
+		JButton btnShowHorizontalLine = new JButton("Show horizontal line");
+		btnShowHorizontalLine.setBounds(418, 456, 159, 29);
+		contentPane.add(btnShowHorizontalLine);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.setBounds(20, 267, 75, 29);
+		contentPane.add(btnDelete);
+	}
+}
