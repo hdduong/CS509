@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="test" project="Hangman" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="hangman.controller.TestGuessLetterController" time="0.316">
+    <testcase name="testValidGuess" classname="hangman.controller.TestGuessLetterController" time="0.316"/>
+  </testsuite>
+  <testsuite name="hangman.model.TestFails" time="0.0">
+    <testcase name="testFailExample" classname="hangman.model.TestFails" time="0.0"/>
+  </testsuite>
+  <testsuite name="hangman.model.TestModel" time="0.001">
+    <testcase name="testStorage" classname="hangman.model.TestModel" time="0.0"/>
+    <testcase name="testGuessLetterNoChance" classname="hangman.model.TestModel" time="0.0"/>
+    <testcase name="testGuessesWhereLetterExists" classname="hangman.model.TestModel" time="0.0"/>
+  </testsuite>
+</testrun>

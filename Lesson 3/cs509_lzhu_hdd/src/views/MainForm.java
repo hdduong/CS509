@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JCheckBoxMenuItem;
 
 public class MainForm extends JPanel {
    
@@ -95,7 +96,7 @@ public class MainForm extends JPanel {
 		add(lblAddNewData);
 		
 		JLabel lblDisplayGraph = new JLabel("Display Graph: ");
-		lblDisplayGraph.setBounds(203, 66, 83, 16);
+		lblDisplayGraph.setBounds(203, 66, 85, 16);
 		add(lblDisplayGraph);
 		
 		JCheckBox chckbxShwoTrendLine = new JCheckBox("Shwo Trend Line");
@@ -123,6 +124,4 @@ public class MainForm extends JPanel {
 		add(btnEdit);
 	
 	}
- 
-
 }

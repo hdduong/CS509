@@ -12,21 +12,38 @@ public class DataSet {
 		dataset = new ArrayList<DataPoint>();
 	}
 	
-	public void loadDataSetFromFile(String filePath) throws IOException {
-		BufferedReader br;
+ 
+	public boolean loadDataSetFromFile(String filePath) {
 		 
-			br=new BufferedReader(new FileReader(filePath));
-			String s;
-			while(null!=(s=br.readLine())){
-				String[] data = s.split(",");
-				DataPoint dp=new DataPoint(Integer.parseInt(data[0]),Integer.parseInt(data[1]));
-				this.addDataPoint(dp);
-			}
-		 
+			try (BufferedReader br=new BufferedReader(new FileReader(filePath))){
+			 
+				String s;
+				while(null!=(s=br.readLine())){
+							String[] data = s.split(",");
+							DataPoint dp=new DataPoint(Double.parseDouble(data[0]),Double.parseDouble(data[1]));
+							this.addDataPoint(dp);
+						} 
+				
+			  } catch (IOException e) { 
+				e.printStackTrace();
+				return false;
+			 }
+			 return true;
 		
 	}
 	
 	public boolean saveDataSetToFile(String filePath){
+		try(BufferedWriter wr=new BufferedWriter(new FileWriter(filePath))){
+			for(DataPoint dp:dataset){
+				wr.write(dp.x+","+dp.y);
+				wr.newLine();
+			}
+		}		
+		catch(IOException e){ 
+			e.printStackTrace();
+			return false;
+	 }
+	 return true;
 		
 	}
 
@@ -38,16 +55,21 @@ public class DataSet {
 		return dataset.remove(d);		 
 	}
 	public boolean deleteDataPoint(int index){ 
-		return dataset.remove(index)==null;		 
+		if(dataset.size()>index){
+			dataset.remove(index);
+			return true;
+		}
+		return false;		 
 	}
 	
 	public boolean  editDataPoint(int index, int x, int y){
 		boolean success=false;
-		if(dataset.size()>index)
+		if(dataset.size()>index){
 			success=true;
-		DataPoint d=dataset.get(index);		
-		d.x=x;
-		d.y=y;
+			DataPoint d=dataset.get(index);		
+			d.x=x;
+			d.y=y;
+		}
 		return success;
 	}
 }

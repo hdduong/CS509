@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestDataSet" project="cs509_lzhu_hdd" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="model.TestDataSet" time="0.025">
+    <testcase name="testSaveData" classname="model.TestDataSet" time="0.024"/>
+    <testcase name="testLoadData" classname="model.TestDataSet" time="0.001"/>
+    <testcase name="testDataSetInit" classname="model.TestDataSet" time="0.0"/>
+  </testsuite>
+</testrun>
