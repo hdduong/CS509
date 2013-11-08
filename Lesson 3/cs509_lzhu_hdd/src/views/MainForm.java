@@ -18,13 +18,14 @@ public class MainForm extends JPanel {
 	 JList  list;
 	 JTextField XtoAddField, YtoAddField;
 	 CurrentSystemState systemState; 
+	 EditForm editDialog ;
 	
 	public MainForm(CurrentSystemState state) { 
 		this.systemState = state;
 	//	setTitle("DataVisualizer");
 	//	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 913, 590);
-		  
+		editDialog = new EditForm(this);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(35, 66, 146, 258);
@@ -136,7 +137,7 @@ public class MainForm extends JPanel {
 		JButton btnEdit = new JButton("Edit");
 		btnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				new EditSelectedDataPointController(systemState.data).act(MainForm.this);
 			}
 		});
 		btnEdit.setBounds(11, 385, 75, 29);
@@ -156,5 +157,8 @@ public class MainForm extends JPanel {
 	
 	public JList getDataList(){
 		return this.list;
+	}
+	public JDialog getEditDialog(){
+		return this.editDialog;
 	}
 }

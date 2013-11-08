@@ -1,9 +1,9 @@
 package controller;
 
-import javax.swing.DefaultListModel;
+import javax.swing.*;
 
 import model.DataSet;
-import views.MainForm;
+import views.*; 
 
 public class EditSelectedDataPointController {
 
@@ -17,14 +17,11 @@ public class EditSelectedDataPointController {
 		int [] row = mainForm.getDataList().getSelectedIndices();
 		if(row.length==0)
 			return false;
-		DefaultListModel list = (DefaultListModel)mainForm.getDataList().getModel();
-		 //only edit the first one;
-		JDailoughe
-			list.remove(row[i]);
-			data.deleteDataPoint(i);
-		 
-		 
+		
+		EditForm editDialog=(EditForm) mainForm.getEditDialog();
+		editDialog.setVisible(true);
+		return true;
+		
 	}
-	
-	
+	 
 }

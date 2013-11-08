@@ -1,0 +1,26 @@
+package controller;
+
+import model.DataSet;
+import views.*;
+
+public class UpdateAfterEditController {
+
+	DataSet data;
+	
+	public EditSelectedDataPointController(DataSet ds){
+		data = ds;
+	}
+	
+	public boolean act(MainForm mainForm){
+		int [] row = mainForm.getDataList().getSelectedIndices();
+		if(row.length==0)
+			return false;
+		
+		EditForm editDialog=(EditForm) mainForm.getEditDialog();
+		editDialog.setVisible(true);
+		
+		
+	}
+	
+	
+}

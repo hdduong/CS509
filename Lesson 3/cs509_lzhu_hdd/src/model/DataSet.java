@@ -71,7 +71,7 @@ public class DataSet {
 		return false;		 
 	}
 	
-	public boolean  editDataPoint(int index, int x, int y){
+	public boolean  editDataPoint(int index, double x, double y){
 		boolean success=false;
 		if(set.size()>index){
 			success=true;
