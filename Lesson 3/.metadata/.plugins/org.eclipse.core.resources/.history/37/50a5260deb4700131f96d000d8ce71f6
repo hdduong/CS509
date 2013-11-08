@@ -1,0 +1,42 @@
+package controller;
+
+import java.io.File;
+
+import javax.swing.*;
+
+import model.DataSet;
+import views.MainForm;
+
+public class LoadDataController {
+	
+	DataSet data;
+	
+	public LoadDataController(DataSet ds){
+		data = ds;
+	}
+	
+	public boolean act(MainForm mainForm){
+		final JFileChooser fc=new JFileChooser();
+		int returnVal = fc.showOpenDialog(mainForm);
+		File file;
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+            file = fc.getSelectedFile();
+            //This is where a real application would open the file.
+            System.out.println("Opening: " + file.getName());
+        } else {
+        	 System.out.println("Open command cancelled by user.");
+        }
+		String filePath = file.getAbsolutePath();
+		data.loadDataSetFromFile(filePath); 
+		
+		DefaultListModel list = (DefaultListModel)mainForm.getDataList().getModel();
+		for(int i=row.length-1;i>=0;i--){
+			list.remove(row[i]);
+			data.deleteDataPoint(i);
+		}
+		
+
+		data.loadDataSetFromFile(filePath);
+	}
+
+}

@@ -1,0 +1,34 @@
+package model;
+
+import model.Graph.GRAPH_TYPE;
+
+public class CurrentSystemState {
+	 
+	DataSet data;
+	Graph graph;
+	GRAPH_TYPE currentGraphType;
+	
+	//initilize the system
+	CurrentSystemState(){
+		data=new DataSet();
+		graph = new CartesianPlot(data);
+		currentGraphType = GRAPH_TYPE.CARTESIAN;
+	}
+	
+	
+//	public boolean refreshGraph(){
+//		
+//		
+//	}
+	
+	
+	public boolean switchGraph(){
+		if(currentGraphType == GRAPH_TYPE.CARTESIAN){
+			graph = new ColumnGraph(data);
+		}
+		else{
+			graph = new CartesianPlot(data);
+		}
+		
+	}
+}

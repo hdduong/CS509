@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 public class DataSet {
 	
-	ArrayList<DataPoint> dataset;
-	
+	public ArrayList<DataPoint> set;
+	final int MAX_SIZE =2048;
 	DataSet(){
-		dataset = new ArrayList<DataPoint>();
+		set = new ArrayList<DataPoint>();
 	}
 	
  
@@ -19,9 +19,14 @@ public class DataSet {
 			 
 				String s;
 				while(null!=(s=br.readLine())){
-							String[] data = s.split(",");
-							DataPoint dp=new DataPoint(Double.parseDouble(data[0]),Double.parseDouble(data[1]));
-							this.addDataPoint(dp);
+							String[] data = s.split(","); 
+							try{
+							 
+							this.addDataPoint(Double.parseDouble(data[0]),Double.parseDouble(data[1]));
+							} catch(NumberFormatException | NullPointerException e){
+								e.printStackTrace();
+								continue;
+							}
 						} 
 				
 			  } catch (IOException e) { 
@@ -34,8 +39,8 @@ public class DataSet {
 	
 	public boolean saveDataSetToFile(String filePath){
 		try(BufferedWriter wr=new BufferedWriter(new FileWriter(filePath))){
-			for(DataPoint dp:dataset){
-				wr.write(dp.x+","+dp.y);
+			for(DataPoint dp:set){
+				wr.write(dp.getX()+","+dp.getY());
 				wr.newLine();
 			}
 		}		
@@ -46,17 +51,21 @@ public class DataSet {
 	 return true;
 		
 	}
-
-	public boolean addDataPoint(DataPoint d){ 
-		return dataset.add(d);
+	
+	public boolean addDataPoint(double x, double y){ 
+		if(this.set.size()>=MAX_SIZE){
+			return false;
+		} 
+		DataPoint d =new DataPoint(x,y);
+		return set.add(d);
 	}
 	
 	public boolean deleteDataPoint(DataPoint d){ 
-		return dataset.remove(d);		 
+		return set.remove(d);		 
 	}
 	public boolean deleteDataPoint(int index){ 
-		if(dataset.size()>index){
-			dataset.remove(index);
+		if(set.size()>index){
+			set.remove(index);
 			return true;
 		}
 		return false;		 
@@ -64,11 +73,11 @@ public class DataSet {
 	
 	public boolean  editDataPoint(int index, int x, int y){
 		boolean success=false;
-		if(dataset.size()>index){
+		if(set.size()>index){
 			success=true;
-			DataPoint d=dataset.get(index);		
-			d.x=x;
-			d.y=y;
+			DataPoint d=set.get(index);		
+			d.setX(x);
+			d.setY(y);
 		}
 		return success;
 	}

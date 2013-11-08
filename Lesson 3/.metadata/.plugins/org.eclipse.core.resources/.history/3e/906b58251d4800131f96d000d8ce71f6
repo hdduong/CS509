@@ -1,0 +1,23 @@
+package model;
+
+/* *
+ * TrendLine equation: y=ax+b, a is slope and b is the intercept. 
+ * 
+ *
+ */
+
+
+public class TrendLine {
+
+	double slope;
+	double intercept;
+	
+	
+	
+	TrendLine(double slope, double intercept){
+		this.slope = slope;
+		this.intercept = intercept;
+	}
+	
+	
+}

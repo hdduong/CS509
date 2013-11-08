@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestDataSet" project="cs509_lzhu_hdd" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="model.TestDataSet" time="0.0">
-    <testcase name="testDataSetInit" classname="model.TestDataSet" time="0.0"/>
-  </testsuite>
-</testrun>

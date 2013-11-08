@@ -1,0 +1,15 @@
+package model;
+
+import junit.framework.TestCase;
+
+public class TestTrendLine extends TestCase {
+
+	public void testTrendLine(){
+		TrendLine tline = new TrendLine(3,4);
+		assertEquals(true,tline.slope==3);
+		assertEquals(true,tline.intercept==4);
+	}
+	
+	
+	
+}

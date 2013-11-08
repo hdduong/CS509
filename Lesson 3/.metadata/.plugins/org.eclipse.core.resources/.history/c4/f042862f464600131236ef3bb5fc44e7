@@ -1,0 +1,23 @@
+package controller;
+
+import views.MainForm;
+import model.*
+
+public class AddDataPointController {
+	DataSet data;
+	
+	public AddDataPointController(DataSet ds){
+		data = ds;
+	}
+	
+	public boolean act(MainForm mainForm){
+		
+		String newX=mainForm.getXToAdd().getText();
+		String newY=mainForm.getYToAdd().getText();
+		mainForm.getYToAdd().setText("");
+		return data.addDataPoint(Double.parseDouble(newX),Double.parseDouble(newY));
+	}
+	
+	
+	
+}

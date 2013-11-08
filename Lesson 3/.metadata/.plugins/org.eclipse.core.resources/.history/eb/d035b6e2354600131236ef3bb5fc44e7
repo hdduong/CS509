@@ -1,0 +1,14 @@
+package model;
+
+public class TrendLine {
+
+	double slope;
+	double intercept;
+	
+	TrendLine(double slope, double intercept){
+		this.slope = slope;
+		this.intercept = intercept;
+	}
+	
+	
+}
