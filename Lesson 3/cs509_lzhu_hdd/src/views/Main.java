@@ -8,15 +8,19 @@ import javax.swing.JPanel;
 import model.CurrentSystemState;
 
 public class Main extends JApplet {
+	MainForm panel;  
 	
 	  public void init() {
 		     this.setSize(1000, 680);
 		  }
-	
+	public MainForm getMainForm(){
+		return this.panel;
+	}
+	  
 	public Main() {
 		
 		CurrentSystemState systemState = new CurrentSystemState();
-	 	MainForm panel=new MainForm(systemState);
+		panel=new MainForm(systemState);
 		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -29,5 +33,7 @@ public class Main extends JApplet {
 		);
 		getContentPane().setLayout(groupLayout);
 	}
+	
+	
 }
 

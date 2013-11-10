@@ -1,0 +1,22 @@
+package controller;
+
+import javax.swing.*;
+
+import views.*;
+
+
+public class TestAddDataPointController {
+	
+	public void testAddDataPointController(){
+		Main main= new Main();
+		main.setVisible(true); 
+		MainForm mainForm = main.getMainForm();
+		mainForm.getXToAdd().setText("122");
+		mainForm.getYToAdd().setText("156.7");
+		 
+		AddDataPointController controller = new AddDataPointController(mainForm);
+		
+	}
+	
+	
+}

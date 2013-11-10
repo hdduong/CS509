@@ -8,6 +8,7 @@ import views.*;
 public class UpdateAfterEditController {
 
 	DataSet data;
+	EditForm editDialog;
 	
 	public UpdateAfterEditController(DataSet ds){
 		data = ds;
@@ -20,7 +21,7 @@ public class UpdateAfterEditController {
 		//only edit the first one;
 		int index=row[0];
 		DefaultListModel list = (DefaultListModel)mainForm.getDataList().getModel(); 
-		EditForm editDialog=(EditForm) mainForm.getEditDialog();
+		editDialog=(EditForm) mainForm.getEditDialog();
 		try{
 			double x=Double.parseDouble(editDialog.getNewX().getText());
 			double y=Double.parseDouble(editDialog.getNewY().getText());

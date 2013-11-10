@@ -1,0 +1,11 @@
+package controller;
+
+import junit.framework.TestCase;
+
+public class TestLoadDataController extends TestCase {
+
+	protected void setUp() throws Exception {
+		super.setUp();
+	}
+
+}

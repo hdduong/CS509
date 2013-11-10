@@ -1,0 +1,16 @@
+package controller;
+
+import views.Main;
+import views.MainForm;
+import junit.framework.TestCase;
+
+public class TestLoadDataController extends TestCase {
+	Main main;
+	MainForm mainForm;
+	
+	public void setUp(){
+		main= new Main();
+		main.setVisible(true); 
+		mainForm = main.getMainForm();
+	}
+}

@@ -1,0 +1,25 @@
+package controller;
+
+import views.*;
+import junit.framework.TestCase;
+
+public class TestUpdateAfterEditController extends TestCase {
+
+	Main main;
+	MainForm mainForm;
+	EditForm editForm;
+	
+	public void setUp(){
+		main= new Main();
+		main.setVisible(true); 
+		mainForm = main.getMainForm();
+		mainForm.getXToAdd().setText("122");
+		mainForm.getYToAdd().setText("156.7"); 
+		AddDataPointController controller = new AddDataPointController(mainForm.getDataSet());
+		controller.act(mainForm);
+	}
+	
+	public void testUpdateAfterEditController(){
+		
+	}
+}

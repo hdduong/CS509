@@ -4,6 +4,7 @@ import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -12,18 +13,20 @@ import javax.swing.border.EmptyBorder;
 
 import controller.*;
 
-import model.CurrentSystemState;
+import model.*; 
 
 public class MainForm extends JPanel {
 	 JList  list;
 	 JTextField XtoAddField, YtoAddField;
 	 CurrentSystemState systemState; 
 	 EditForm editDialog ;
+	 JFileChooser fileChooser;
 	
 	public MainForm(CurrentSystemState state) { 
 		this.systemState = state;
 	//	setTitle("DataVisualizer");
 	//	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 fileChooser=new JFileChooser("C:\\Users\\lzhu\\Documents\\GitHub\\CS509\\Lesson 3\\cs509_lzhu_hdd\\src\\resources"); 
 		setBounds(100, 100, 913, 590);
 		editDialog = new EditForm(this);
 		
@@ -41,6 +44,10 @@ public class MainForm extends JPanel {
 			}
 		});
 		btnUploadData.setBounds(35, 11, 99, 29);
+		
+		//final JFileChooser fc=new JFileChooser("src"+File.separator+"resources"+File.separator+"dataToBeLoadWithEmptyLine.txt");  
+		
+		
 		
 		JButton btnSaveDataTo = new JButton("Save data");
 		btnSaveDataTo.addActionListener(new ActionListener() {
@@ -158,7 +165,14 @@ public class MainForm extends JPanel {
 	public JList getDataList(){
 		return this.list;
 	}
-	public JDialog getEditDialog(){
+	public EditForm getEditDialog(){
 		return this.editDialog;
+	}
+	public DataSet getDataSet(){
+		return this.systemState.data;
+	}
+	
+	public JFileChooser getFileChooser(){
+		return this.fileChooser;
 	}
 }
