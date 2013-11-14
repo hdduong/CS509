@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestEditSelectedDataPointController" project="cs509_lzhu_hdd" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="controller.TestEditSelectedDataPointController" time="1.064">
-    <testcase name="testEditSelectedDataPointController" classname="controller.TestEditSelectedDataPointController" time="0.583"/>
-    <testcase name="testEditSelectedDataPointControllerWithNoSelection" classname="controller.TestEditSelectedDataPointController" time="0.481"/>
-  </testsuite>
-</testrun>

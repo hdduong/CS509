@@ -26,6 +26,9 @@ public class MainForm extends JPanel {
 		this.systemState = state;
 	//	setTitle("DataVisualizer");
 	//	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		 File file=new File("src"+File.separator+"resources"+File.separator+"dataToBeLoad.txt");
+//		 String absolutePath=file.getAbsolutePath();
+		 
 		 fileChooser=new JFileChooser("C:\\Users\\lzhu\\Documents\\GitHub\\CS509\\Lesson 3\\cs509_lzhu_hdd\\src\\resources"); 
 		setBounds(100, 100, 913, 590);
 		editDialog = new EditForm(this);

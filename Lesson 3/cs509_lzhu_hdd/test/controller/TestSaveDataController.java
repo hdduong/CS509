@@ -32,9 +32,10 @@ public class TestSaveDataController extends TestCase {
 		String filePath = "C:\\Users\\lzhu\\Documents\\GitHub\\CS509\\Lesson 3\\cs509_lzhu_hdd\\src\\resources\\EmptyFile.txt";
 		fileChooser.setSelectedFile(new File(filePath));
 		SaveDataController controller = new SaveDataController(mainForm.getDataSet());
-		assertTrue(controller.act(mainForm));
+		assertTrue(controller.operation(0, mainForm));
 		
 		assertEquals(mainForm.getDataSet().set.size(),1);
+		assertFalse(controller.operation(1, mainForm));
 	}
 
 }

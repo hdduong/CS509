@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="test (1)" project="cs509_lzhu_hdd" tests="23" started="23" failures="0" errors="0" ignored="0">
+  <testsuite name="model.TestDataSet" time="0.018">
+    <testcase name="testLoadDataWithEmptyLine" classname="model.TestDataSet" time="0.017"/>
+    <testcase name="testLoadDataWithInvalidData" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testLoadDataWithEmptyFile" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testDataSetInit" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testDeleteDatePonitGivenIndex" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testEditDataPoint" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testDeleteDataPointGivenObject" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testLoadData" classname="model.TestDataSet" time="0.0"/>
+    <testcase name="testSaveData" classname="model.TestDataSet" time="0.001"/>
+  </testsuite>
+  <testsuite name="controller.TestUpdateAfterEditController" time="0.591">
+    <testcase name="testUpdateAfterEditControllerWithNoSelection" classname="controller.TestUpdateAfterEditController" time="0.458"/>
+    <testcase name="testUpdateAfterEditControllerWithEmptyInput" classname="controller.TestUpdateAfterEditController" time="0.072"/>
+    <testcase name="testUpdateAfterEditController" classname="controller.TestUpdateAfterEditController" time="0.061"/>
+  </testsuite>
+  <testsuite name="controller.TestSaveDataController" time="0.066">
+    <testcase name="testSaveDataController" classname="controller.TestSaveDataController" time="0.066"/>
+  </testsuite>
+  <testsuite name="controller.TestAddDataPointController" time="0.114">
+    <testcase name="testAddDataPointControllerWithEmptyInput" classname="controller.TestAddDataPointController" time="0.056"/>
+    <testcase name="testAddDataPointController" classname="controller.TestAddDataPointController" time="0.058"/>
+  </testsuite>
+  <testsuite name="model.TestDataPoint" time="0.0">
+    <testcase name="testDataPointInit" classname="model.TestDataPoint" time="0.0"/>
+  </testsuite>
+  <testsuite name="controller.TestDeleteDataPoint" time="0.123">
+    <testcase name="testDeleteDataPointWithoutSelection" classname="controller.TestDeleteDataPoint" time="0.061"/>
+    <testcase name="testDeleteDataPoint" classname="controller.TestDeleteDataPoint" time="0.062"/>
+  </testsuite>
+  <testsuite name="controller.TestLoadDataController" time="0.06">
+    <testcase name="testLoadDataController" classname="controller.TestLoadDataController" time="0.06"/>
+  </testsuite>
+  <testsuite name="controller.TestEditSelectedDataPointController" time="0.336">
+    <testcase name="testEditSelectedDataPointControllerWithNoSelection" classname="controller.TestEditSelectedDataPointController" time="0.062"/>
+    <testcase name="testEditSelectedDataPointController" classname="controller.TestEditSelectedDataPointController" time="0.274"/>
+  </testsuite>
+  <testsuite name="model.TestTrendLine" time="0.002">
+    <testcase name="testTrendLine" classname="model.TestTrendLine" time="0.002"/>
+    <testcase name="testComputeTrendLine" classname="model.TestTrendLine" time="0.0"/>
+  </testsuite>
+</testrun>

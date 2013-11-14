@@ -14,8 +14,24 @@ public class EditForm extends JDialog{
 	private JTextField newX;
 	private JTextField newY;
 	
+	boolean wasCanceled = false;
+
+	public boolean wasCanceled() { 
+		return wasCanceled;
+	}
+	public void setCanceled(boolean b) {
+		wasCanceled = b;
+	}
+	public JTextField getNewX(){
+		return newX;
+	}
+	public JTextField getNewY(){
+		return newY;
+	}
+	
 	public EditForm(final MainForm mainForm) {
 		super();
+		getContentPane().setFont(new Font("Tahoma", Font.PLAIN, 14));
 		this.setBounds(200, 200, 400, 260);
 		JLabel lblNewLabel = new JLabel("x =");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -32,16 +48,26 @@ public class EditForm extends JDialog{
 		newY = new JTextField();
 		newY.setColumns(10);
 		
-		JButton btnDone = new JButton("Done");
+		JButton btnDone = new JButton("OK");
 		btnDone.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new UpdateAfterEditController(mainForm.systemState.data).act(mainForm);
+				new EditFormOKController().act(EditForm.this);
 			}
 		});
 		btnDone.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		
+		JButton btnNewButton = new JButton("Cancel");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new EditFormCancelController().act(EditForm.this);
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		
+		
 		GroupLayout groupLayout = new GroupLayout(getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addGroup(groupLayout.createSequentialGroup()
@@ -56,15 +82,17 @@ public class EditForm extends JDialog{
 						.addGroup(groupLayout.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblTypeInValue, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(106, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(250, Short.MAX_VALUE)
+					.addContainerGap(154, Short.MAX_VALUE))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap(207, Short.MAX_VALUE)
 					.addComponent(btnDone)
-					.addGap(29))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 					.addGap(20)
 					.addComponent(lblTypeInValue)
 					.addGap(31)
@@ -75,18 +103,14 @@ public class EditForm extends JDialog{
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblY)
 						.addComponent(newY, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-					.addComponent(btnDone)
-					.addContainerGap())
+					.addPreferredGap(ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnDone))
+					.addGap(12))
 		);
 		getContentPane().setLayout(groupLayout);
 	}
 
-	public JTextField getNewX(){
-		return newX;
-	}
-	public JTextField getNewY(){
-		return newY;
-	}
-
+	
 }

@@ -19,13 +19,14 @@ public class TestLoadDataController extends TestCase {
 	
 	public void testLoadDataController(){
 		assertTrue((mainForm.getDataSet().set.size()==0));
-		//String filePath = "src"+File.separator+"resources"+File.separator+"dataToBeLoad.txt";
-		String filePath = "C:\\Users\\lzhu\\Documents\\GitHub\\CS509\\Lesson 3\\cs509_lzhu_hdd\\src\\resources\\dataToBeLoad.txt";
+		String filePath = "src"+File.separator+"resources"+File.separator+"dataToBeLoad.txt";
+		//String filePath = "C:\\Users\\lzhu\\Documents\\GitHub\\CS509\\Lesson 3\\cs509_lzhu_hdd\\src\\resources\\dataToBeLoad.txt";
 		fileChooser.setSelectedFile(new File(filePath));
 		LoadDataController controller = new LoadDataController(mainForm.getDataSet());
-		assertTrue(controller.act(mainForm));
+		assertTrue(controller.operation(0, mainForm));
 		
 		assertEquals(mainForm.getDataSet().set.size(),6);
 		assertEquals(mainForm.getDataSet().set.get(5).getY(),-8.9); 
+		assertFalse(controller.operation(1, mainForm));
 	}
 }

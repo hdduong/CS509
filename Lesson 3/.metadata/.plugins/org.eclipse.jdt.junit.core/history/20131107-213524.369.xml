@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestTrendLine" project="cs509_lzhu_hdd" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="model.TestTrendLine" time="0.0">
-    <testcase name="testTrendLine" classname="model.TestTrendLine" time="0.0"/>
-    <testcase name="testComputeTrendLine" classname="model.TestTrendLine" time="0.0"/>
-  </testsuite>
-</testrun>

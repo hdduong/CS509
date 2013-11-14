@@ -1,9 +1,0 @@
-package model;
-
-public class TestDataPoint {
-
-	public TestDataPoint() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

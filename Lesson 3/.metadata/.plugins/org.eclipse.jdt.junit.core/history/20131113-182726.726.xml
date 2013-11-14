@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="controller" project="cs509_lzhu_hdd" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="controller.TestUpdateAfterEditController" time="0.52">
+    <testcase name="testUpdateAfterEditControllerWithNoSelection" classname="controller.TestUpdateAfterEditController" time="0.388"/>
+    <testcase name="testUpdateAfterEditControllerWithEmptyInput" classname="controller.TestUpdateAfterEditController" time="0.069"/>
+    <testcase name="testUpdateAfterEditController" classname="controller.TestUpdateAfterEditController" time="0.063"/>
+  </testsuite>
+  <testsuite name="controller.TestSaveDataController" time="0.069">
+    <testcase name="testSaveDataController" classname="controller.TestSaveDataController" time="0.069"/>
+  </testsuite>
+  <testsuite name="controller.TestAddDataPointController" time="0.122">
+    <testcase name="testAddDataPointControllerWithEmptyInput" classname="controller.TestAddDataPointController" time="0.06"/>
+    <testcase name="testAddDataPointController" classname="controller.TestAddDataPointController" time="0.062"/>
+  </testsuite>
+  <testsuite name="controller.TestDeleteDataPoint" time="0.117">
+    <testcase name="testDeleteDataPointWithoutSelection" classname="controller.TestDeleteDataPoint" time="0.058"/>
+    <testcase name="testDeleteDataPoint" classname="controller.TestDeleteDataPoint" time="0.06"/>
+  </testsuite>
+  <testsuite name="controller.TestLoadDataController" time="0.059">
+    <testcase name="testLoadDataController" classname="controller.TestLoadDataController" time="0.059"/>
+  </testsuite>
+  <testsuite name="controller.TestEditSelectedDataPointController" time="0.307">
+    <testcase name="testEditSelectedDataPointController" classname="controller.TestEditSelectedDataPointController" time="0.239"/>
+    <testcase name="testEditSelectedDataPointControllerWithNoSelection" classname="controller.TestEditSelectedDataPointController" time="0.068"/>
+  </testsuite>
+</testrun>

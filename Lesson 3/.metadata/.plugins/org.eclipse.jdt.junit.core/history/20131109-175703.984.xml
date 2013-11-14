@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAddDataPointController" project="cs509_lzhu_hdd" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="controller.TestAddDataPointController" time="0.277">
-    <testcase name="testAddDataPointControllerWithEmptyInput" classname="controller.TestAddDataPointController" time="0.243"/>
-    <testcase name="testAddDataPointController" classname="controller.TestAddDataPointController" time="0.034"/>
-  </testsuite>
-</testrun>
