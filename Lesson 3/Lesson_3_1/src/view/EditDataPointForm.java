@@ -1,0 +1,134 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JTextField;
+
+import model.Model;
+
+import controller.EditDataPointCancelController;
+import controller.EditDataPointOKController;
+
+public class EditDataPointForm extends JDialog {
+
+	JPanel contentPanel = new JPanel();
+	JTextField txtEditX;
+	JTextField txtEditY;
+	JButton okButton;
+	JButton cancelButton;
+	
+	Model model;
+	ManipuldateDataForm manipuldateForm;
+	
+	public EditDataPointForm(Model m, ManipuldateDataForm manForm) {
+		
+		this.manipuldateForm = manForm;
+		this.model = m;
+		
+		setBounds(100, 100, 344, 157);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		
+		JLabel lblNewX = new JLabel("New x = ");
+		
+		JLabel lblNewY = new JLabel("New y = ");
+		
+		txtEditX = new JTextField();
+		txtEditX.setColumns(10);
+		
+		txtEditY = new JTextField();
+		txtEditY.setColumns(10);
+		{
+			okButton = new JButton("OK");
+			okButton.setActionCommand("OK");
+			getRootPane().setDefaultButton(okButton);
+			
+			okButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+						new EditDataPointOKController(EditDataPointForm.this.model).act(EditDataPointForm.this, EditDataPointForm.this.manipuldateForm);
+				}
+			});
+		}
+		{
+			cancelButton = new JButton("Cancel");
+			cancelButton.setActionCommand("Cancel");
+			
+			cancelButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					new EditDataPointCancelController().act(EditDataPointForm.this);
+				}
+			});
+		}
+		
+		JLabel lblClickOkTo = new JLabel("Click OK to confirm your edit");
+		GroupLayout gl_contentPanel = new GroupLayout(contentPanel);
+		gl_contentPanel.setHorizontalGroup(
+			gl_contentPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPanel.createSequentialGroup()
+					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPanel.createSequentialGroup()
+							.addGap(26)
+							.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNewY)
+								.addComponent(lblNewX))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(txtEditY)
+								.addComponent(txtEditX, 125, 125, Short.MAX_VALUE))
+							.addPreferredGap(ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+							.addGroup(gl_contentPanel.createParallelGroup(Alignment.TRAILING, false)
+								.addComponent(okButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(cancelButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+						.addGroup(gl_contentPanel.createSequentialGroup()
+							.addGap(73)
+							.addComponent(lblClickOkTo)))
+					.addContainerGap())
+		);
+		gl_contentPanel.setVerticalGroup(
+			gl_contentPanel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPanel.createSequentialGroup()
+					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewX)
+						.addComponent(okButton)
+						.addComponent(txtEditX, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewY)
+						.addComponent(cancelButton)
+						.addComponent(txtEditY, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(lblClickOkTo)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		contentPanel.setLayout(gl_contentPanel);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+		}
+		
+		setResizable(false);
+	}
+	
+	public JTextField getEditX() {
+		return this.txtEditX;
+	}
+	
+	public JTextField getEditY() {
+		return this.txtEditY;
+	}
+	
+	
+}
