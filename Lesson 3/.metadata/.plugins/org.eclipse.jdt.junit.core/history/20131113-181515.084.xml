@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestSaveDataController" project="cs509_lzhu_hdd" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="controller.TestSaveDataController" time="0.448">
-    <testcase name="testSaveDataController" classname="controller.TestSaveDataController" time="0.448"/>
-  </testsuite>
-</testrun>
