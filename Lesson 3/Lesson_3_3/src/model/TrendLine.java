@@ -50,11 +50,14 @@ public class TrendLine {
 		String strIntercept= df.format(getIntercept());  
 		String formula = "";
 		
-		if ( (getIntercept() > 0.0) ) {
+		if ( (getIntercept() > 0.00001) ) {
 			formula =  "y   = " + strSlope + "*x + " + strIntercept;
 		}
-		else {
+		else if  ( (getIntercept() < 0.0) ){
 			formula =  "y   = " + strSlope + "*x " + strIntercept;
+		}
+		else {    //[0.0 and .00001] then should be 0
+			formula =  "y   = " + strSlope + "*x ";
 		}
 		return formula;
 	}
