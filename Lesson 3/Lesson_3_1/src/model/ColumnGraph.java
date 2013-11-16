@@ -12,7 +12,6 @@ public class ColumnGraph extends Graph {
 
 	double panelWidth;
 	double panelHeight;
-	
 	public ColumnGraph(DataSet dataset,double pnlWidth, double pnlHeight) {
 		super(dataset);
 		

@@ -9,7 +9,7 @@ public class Model {
 	
 	GraphType graphType;
 	
-	
+	String s="This is used to test git from linglong";
 	public Model() {
 		ds = new DataSet();
 		graph = new Graph(ds);

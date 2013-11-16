@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 INDEX VERSION 1.126+D:\GitHub\CS509\Lesson 3\.metadata\.plugins\org.eclipse.jdt.core
 1913712688.index
+=======
+INDEX VERSION 1.126+C:\Users\lzhu\Documents\GitHub\CS509\Lesson 3\.metadata\.plugins\org.eclipse.jdt.core
+2619248924.index
+1913712688.index
+3597016957.index
+>>>>>>> commit before pull

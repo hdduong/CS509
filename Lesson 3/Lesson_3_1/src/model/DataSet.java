@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class DataSet {
 	ArrayList<DataPoint> dataset;
 
+	String s="This is used to test git from linglong";
 	
 	DataSet(){
 		dataset = new ArrayList<DataPoint>();
