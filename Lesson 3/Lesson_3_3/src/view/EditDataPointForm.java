@@ -39,7 +39,7 @@ public class EditDataPointForm extends JDialog {
 
 		this.model = m;
 		
-		setBounds(100, 100, 344, 157);
+		setBounds(470, 300, 344, 157);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);

@@ -14,8 +14,7 @@ public class Model {
 		ds = new DataSet();
 		graph = new Graph(ds);
 		
-		//This is the way I FIX to increase Model
-		//coverage code. Eclmacma is confuse of GraphType enum
+		 
 		graphType = GraphType.CARTESIAN;
 		graphType = GraphType.COLUMN;
 		graphType = GraphType.CARTESIAN;
@@ -30,6 +29,9 @@ public class Model {
 		graphType = GraphType.CARTESIAN;
 		graphType = GraphType.CARTESIAN;
 		graphType = GraphType.COLUMN;
+		//The above is to increase coverage of this file. This is the only place 
+		//we do this in the project because Eclmacma is confuse of GraphType enum.
+		//If you remove above lines, the cover is still 91.6% for src folder
 		graphType = GraphType.CARTESIAN;
 	}
 	
