@@ -24,6 +24,7 @@ public class DataPoint {
 	}
 	
 
+	String testStr = "Test Git update";
 	
 	public double getX(){ return this.x; }
 	public double getY(){ return this.y; }
