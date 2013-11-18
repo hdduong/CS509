@@ -17,6 +17,8 @@ public class Model {
 	
 	String s5 = "this is string s5 hdduong";
 	
+	String s4 = "this is string s4 hdduongwpi";
+	
 	public Model() {
 		ds = new DataSet();
 		graph = new Graph(ds);
