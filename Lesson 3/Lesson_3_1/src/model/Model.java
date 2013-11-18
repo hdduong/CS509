@@ -10,6 +10,9 @@ public class Model {
 	GraphType graphType;
 	
 	String s="This is used to test git from linglong";
+	
+	String s2="this is test by Hien";
+	
 	public Model() {
 		ds = new DataSet();
 		graph = new Graph(ds);
