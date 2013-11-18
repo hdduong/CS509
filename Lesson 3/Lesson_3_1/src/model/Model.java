@@ -13,6 +13,8 @@ public class Model {
 	
 	String s2="this is test by Hien";
 	
+	String s3="this is string s3 hdduongwpi";
+	
 	public Model() {
 		ds = new DataSet();
 		graph = new Graph(ds);
